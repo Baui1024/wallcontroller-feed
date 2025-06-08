@@ -10,7 +10,7 @@ define Package/cert-renew
   SECTION:=wallcontroller
   CATEGORY:=Wallcontroller
   TITLE:=Self-signed SSL Certificate Renewal
-  DEPENDS:=+crond +openssl-util 
+  DEPENDS:= +openssl-util 
 endef
 
 define Package/cert-renew/description
