@@ -42,6 +42,7 @@ endef
 
 define Package/webserver/install
 	$(INSTALL_DIR) $(1)/usr/bin/webserver
+	$(INSTALL_DIR) $(1)/usr/bin/webserver/frontend/dist
 	$(INSTALL_DIR) $(1)/etc/init.d
 
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/main.py $(1)/usr/bin/webserver/
