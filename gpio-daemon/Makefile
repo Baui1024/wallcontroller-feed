@@ -45,6 +45,7 @@ define Package/gpio-daemon/install
 
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/main.py $(1)/usr/bin/gpio-daemon/
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/led.py $(1)/usr/bin/gpio-daemon/
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/button.py $(1)/usr/bin/gpio-daemon/
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/gpio-daemon.init $(1)/etc/init.d/gpio-daemon
 endef
 

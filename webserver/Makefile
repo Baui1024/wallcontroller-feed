@@ -42,12 +42,12 @@ endef
 
 define Package/webserver/install
 	$(INSTALL_DIR) $(1)/usr/bin/webserver
-	$(INSTALL_DIR) $(1)/usr/bin/webserver/frontend/dist
+	$(INSTALL_DIR) $(1)/usr/bin/webserver/frontend/
 	$(INSTALL_DIR) $(1)/etc/init.d
 
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/main.py $(1)/usr/bin/webserver/
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/ip_tool.py $(1)/usr/bin/webserver/
-	$(CP) -r $(PKG_BUILD_DIR)/frontend/dist $(1)/usr/bin/webserver/frontend/dist
+	$(CP) -r $(PKG_BUILD_DIR)/frontend/dist $(1)/usr/bin/webserver/frontend/
 
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/webserver.init $(1)/etc/init.d/webserver
 endef
