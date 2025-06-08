@@ -36,8 +36,8 @@ define Build/Prepare
 endef
 
 define Build/Compile
-	cd $(PKG_BUILD_DIR) && npm install
-	cd $(PKG_BUILD_DIR) && npm run build
+	cd $(PKG_BUILD_DIR)/frontend && npm install
+	cd $(PKG_BUILD_DIR)/frontend && npm run build
 endef
 
 define Package/webserver/install
