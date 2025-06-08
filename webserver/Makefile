@@ -36,7 +36,8 @@ define Build/Prepare
 endef
 
 define Build/Compile
-	# No compilation required for Python
+	cd $(PKG_BUILD_DIR) && npm install
+	cd $(PKG_BUILD_DIR) && npm run build
 endef
 
 define Package/webserver/install
