@@ -46,7 +46,7 @@ define Package/webserver/install
 
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/main.py $(1)/usr/bin/webserver/
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/ip_tool.py $(1)/usr/bin/webserver/
-	$(CP) -r $(PKG_BUILD_DIR)/frontend/dist $(1)/usr/bin/webserver/frontend/
+	$(CP) -r $(PKG_BUILD_DIR)/frontend/dist $(1)/usr/bin/webserver/frontend/dist
 
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/webserver.init $(1)/etc/init.d/webserver
 endef
