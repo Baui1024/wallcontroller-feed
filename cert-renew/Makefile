@@ -28,15 +28,15 @@ define Build/Compile
 endef
 
 define Package/cert-renew/install
-	$(INSTALL_DIR) $(1)/usr/bin/cert-renew
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/files/cert-renew.sh $(1)/usr/bin/cert-renew/
+    $(INSTALL_DIR) $(1)/usr/bin/cert-renew
+    $(INSTALL_BIN) $(PKG_BUILD_DIR)/files/cert-renew.sh $(1)/usr/bin/cert-renew/
 
-	$(INSTALL_DIR) $(1)/etc/crontabs
-	$(INSTALL_CONF) $(PKG_BUILD_DIR)/files/root $(1)/etc/crontabs/root
+    $(INSTALL_DIR) $(1)/etc/crontabs
+    $(INSTALL_CONF) $(PKG_BUILD_DIR)/files/root $(1)/etc/crontabs/root
 
-	# Optional: procd init.d script
-	$(INSTALL_DIR) $(1)/etc/init.d
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/files/cert-renew.init $(1)/etc/init.d/cert-renew
+    # Optional: procd init.d script
+    $(INSTALL_DIR) $(1)/etc/init.d
+    $(INSTALL_BIN) $(PKG_BUILD_DIR)/files/cert-renew.init $(1)/etc/init.d/cert-renew
 endef
 
 $(eval $(call BuildPackage,cert-renew))
