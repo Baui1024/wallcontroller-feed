@@ -21,14 +21,14 @@ PKG_MAINTAINER:=Thomas Bauer <t.bauer_1024@gmx.de>
 include $(INCLUDE_DIR)/package.mk
 
 define Package/webserver
-  SECTION:=wallcontroller
-  CATEGORY:=Wallcontroller
-  TITLE:=Web configuration interface for Wall Controller
-  DEPENDS:=+python3 +python3-bottle +python3-netifaces +python3-websockets +python3-uci
+	SECTION:=wallcontroller
+	CATEGORY:=Wallcontroller
+	TITLE:=Web configuration interface for Wall Controller
+	DEPENDS:=+python3 +python3-bottle +python3-netifaces +python3-websockets +python3-uci
 endef
 
 define Package/webserver/description
-  A small Python bottle-based web interface for changing IP and network settings on the Onion Omega2S+.
+	A small Python bottle-based web interface for changing IP and network settings on the Onion Omega2S+.
 endef
 
 define Build/Prepare

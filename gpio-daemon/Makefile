@@ -21,14 +21,14 @@ PKG_MAINTAINER:=Thomas Bauer <t.bauer_1024@gmx.de>
 include $(INCLUDE_DIR)/package.mk
 
 define Package/gpio-daemon
-  SECTION:=wallcontroller
-  CATEGORY:=Wallcontroller
-  TITLE:=GPIO WebSocket Control Daemon
-  DEPENDS:=+python3 +python3-websockets +python3-gpiod
+	SECTION:=wallcontroller
+	CATEGORY:=Wallcontroller
+	TITLE:=GPIO WebSocket Control Daemon
+	DEPENDS:=+python3 +python3-websockets +python3-gpiod
 endef
 
 define Package/gpio-daemon/description
-  A Python daemon that exposes GPIO control over a WebSocket interface.
+	A Python daemon that exposes GPIO control over a WebSocket interface.
 endef
 
 define Build/Prepare
