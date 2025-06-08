@@ -18,7 +18,9 @@ define Package/cert-renew/description
 endef
 
 define Build/Prepare
-	$(call Build/Prepare/Default)
+    mkdir -p $(PKG_BUILD_DIR)/files
+    $(CP) ./files/* $(PKG_BUILD_DIR)/files/
+    $(call Build/Prepare/Default)
 endef
 
 define Build/Compile
