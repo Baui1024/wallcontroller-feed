@@ -17,6 +17,10 @@ define Package/cert-renew/description
   Installs a script and cron job to automatically renew self-signed SSL certificates on OpenWRT.
 endef
 
+define Build/Prepare
+	$(call Build/Prepare/Default)
+endef
+
 define Build/Compile
     # nothing to compile
 endef
