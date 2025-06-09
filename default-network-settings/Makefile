@@ -10,7 +10,7 @@ define Package/default-network-settings
   SECTION:=wallcontroller
   CATEGORY:=Wallcontroller
   TITLE:=Wallcontroller Hostname Setter
-  DEPENDS:=+mac80211
+  DEPENDS:=+uci
 endef
 
 define Package/default-network-settings/description
