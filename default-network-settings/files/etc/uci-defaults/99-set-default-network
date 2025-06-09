@@ -1,0 +1,36 @@
+#!/bin/sh
+
+# Set interface to extract MAC address
+IFACE="eth0"
+PREFIX="wallcontroller"
+
+# Get MAC address
+mac=$(ifconfig "$IFACE" | grep -o -E '([[:xdigit:]]{2}:){5}[[:xdigit:]]{2}' | head -n1)
+if [ -n "$mac" ]; then
+    last4=$(echo "$mac" | tr -d ':' | tail -c 5)
+    newname="${PREFIX}-${last4}"
+
+    # Set hostname
+    uci set system.@system[0].hostname="$newname"
+    echo "$newname" > /etc/hostname
+    sed -i "s/127.0.1.1.*/127.0.1.1\t$newname/" /etc/hosts
+fi
+
+# Set timezone to CET
+uci set system.@system[0].timezone='CET-1CEST,M3.5.0,M10.5.0/3'
+uci set system.@system[0].zonename='Europe/Berlin'
+
+# Disable all radios
+for section in $(uci show wireless | grep "=wifi-device" | cut -d. -f2 | cut -d= -f1); do
+    uci set wireless.$section.disabled='1'
+done
+
+# Commit changes
+uci commit system
+uci commit wireless
+
+# Reload affected services
+/etc/init.d/system reload
+wifi reload
+
+exit 0
