@@ -26,17 +26,19 @@ for section in $(uci show wireless | grep "=wifi-device" | cut -d. -f2 | cut -d=
 done
 
 # Set up LAN interface as dhcp
-network.lan=interface
-network.lan.device='eth0'
-network.lan.proto='dhcp'
+uci set network.lan=interface
+uci set network.lan.device='eth0'
+uci set network.lan.proto='dhcp'
 
 
 # Commit changes
 uci commit system
 uci commit wireless
+uci commit network
 
 # Reload affected services
 /etc/init.d/system reload
 wifi reload
+/etc/init.d/network reload
 
 exit 0
