@@ -25,6 +25,12 @@ for section in $(uci show wireless | grep "=wifi-device" | cut -d. -f2 | cut -d=
     uci set wireless.$section.disabled='1'
 done
 
+# Set up LAN interface as dhcp
+network.lan=interface
+network.lan.device='eth0'
+network.lan.proto='dhcp'
+
+
 # Commit changes
 uci commit system
 uci commit wireless
