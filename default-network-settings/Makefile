@@ -18,12 +18,12 @@ define Package/default-network-settings/description
 endef
 
 define Build/Compile
-    # Nothing to compile
+  # Nothing to compile
 endef
 
 define Package/default-network-settings/install
-    $(INSTALL_DIR) $(1)/etc/uci-defaults
-    $(INSTALL_BIN) ./files/etc/uci-defaults/99-set-default-network $(1)/etc/uci-defaults/99-set-default-network
+  $(INSTALL_DIR) $(1)/etc/uci-defaults
+  $(INSTALL_BIN) ./files/etc/uci-defaults/99-set-default-network $(1)/etc/uci-defaults/99-set-default-network
 endef
 
 $(eval $(call BuildPackage,default-network-settings))
