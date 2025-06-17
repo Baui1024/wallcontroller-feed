@@ -24,7 +24,7 @@ define Package/webserver
 	SECTION:=wallcontroller
 	CATEGORY:=Wallcontroller
 	TITLE:=Web configuration interface for Wall Controller
-	DEPENDS:=+python3 +python3-bottle +python3-netifaces +python3-websockets +python3-uci
+	DEPENDS:=+python3 +python3-bottle +python3-netifaces +python3-websockets +python3-uci +umdns
 endef
 
 define Package/webserver/description

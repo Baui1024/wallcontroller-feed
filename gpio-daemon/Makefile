@@ -5,7 +5,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=gpio-daemon
-PKG_VERSION:=1.0.3
+PKG_VERSION:=1.0.4
 PKG_RELEASE:=1
 
 PKG_SOURCE_PROTO:=git
@@ -24,7 +24,7 @@ define Package/gpio-daemon
 	SECTION:=wallcontroller
 	CATEGORY:=Wallcontroller
 	TITLE:=GPIO WebSocket Control Daemon
-	DEPENDS:=+python3 +python3-websockets +python3-gpiod
+	DEPENDS:=+python3 +python3-websockets +python3-gpiod +omega2-ctrl
 endef
 
 define Package/gpio-daemon/description
