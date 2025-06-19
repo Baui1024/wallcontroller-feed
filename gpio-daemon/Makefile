@@ -24,7 +24,7 @@ define Package/gpio-daemon
 	SECTION:=wallcontroller
 	CATEGORY:=Wallcontroller
 	TITLE:=GPIO WebSocket Control Daemon
-	DEPENDS:=+python3 +python3-websockets +python3-gpiod +omega2-ctrl
+	DEPENDS:=+python3 +python3-websockets +python3-gpiod +omega2-ctrl-wallcontroller
 endef
 
 define Package/gpio-daemon/description
