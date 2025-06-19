@@ -8,7 +8,7 @@
 #
 
 include $(TOPDIR)/rules.mk
-PKG_NAME:=omega2-ctrl
+PKG_NAME:=omega2-ctrl-wallcontroller
 PKG_VERSION:=0.4.1
 PKG_RELEASE:=1
 
