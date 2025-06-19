@@ -25,8 +25,8 @@ include $(INCLUDE_DIR)/package.mk
 
 # application package
 define Package/$(PKG_NAME)
-	SECTION:=onion
-	CATEGORY:=Onion
+	SECTION:=wallcontroller
+	CATEGORY:=Wallcontroller
 	SUBMENU:=Utilities
 	TITLE:=Utility to control the Omega2's low-level hardware
 endef
