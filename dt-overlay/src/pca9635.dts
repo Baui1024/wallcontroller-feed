@@ -17,13 +17,114 @@
                 led@0 {
                     label = "user:led0";
                     reg = <0>;
+                    default-state = "off";
+                    linux,default-trigger = "none";
                 };
 
                 led@1 {
                     label = "user:led1";
                     reg = <1>;
+                    default-state = "off";
+                    linux,default-trigger = "none";
                 };
-                // Add more as needed
+
+                led@2 {
+                    label = "user:led2";
+                    reg = <2>;
+                    default-state = "off";
+                    linux,default-trigger = "none";
+                };
+
+                led@3 {
+                    label = "user:led3";
+                    reg = <3>;
+                    default-state = "off";
+                    linux,default-trigger = "none";
+                };
+
+                led@4 {
+                    label = "user:led4";
+                    reg = <4>;
+                    default-state = "off";
+                    linux,default-trigger = "none";
+                };
+
+                led@5 {
+                    label = "user:led5";
+                    reg = <5>;
+                    default-state = "off";
+                    linux,default-trigger = "none";
+                };
+
+                led@6 {
+                    label = "user:led6";
+                    reg = <6>;
+                    default-state = "off";
+                    linux,default-trigger = "none";
+                };
+
+                led@7 {
+                    label = "user:led7";
+                    reg = <7>;
+                    default-state = "off";
+                    linux,default-trigger = "none";
+                };
+
+                led@8 {
+                    label = "user:led8";
+                    reg = <8>;
+                    default-state = "off";
+                    linux,default-trigger = "none";
+                };
+
+                led@9 {
+                    label = "user:led9";
+                    reg = <9>;
+                    default-state = "off";
+                    linux,default-trigger = "none";
+                };
+
+                led@10 {
+                    label = "user:led10";
+                    reg = <10>;
+                    default-state = "off";
+                    linux,default-trigger = "none";
+                };
+
+                led@11 {
+                    label = "user:led11";
+                    reg = <11>;
+                    default-state = "off";
+                    linux,default-trigger = "none";
+                };
+
+                led@12 {
+                    label = "user:led12";
+                    reg = <12>;
+                    default-state = "off";
+                    linux,default-trigger = "none";
+                };
+
+                led@13 {
+                    label = "user:led13";
+                    reg = <13>;
+                    default-state = "off";
+                    linux,default-trigger = "none";
+                };
+
+                led@14 {
+                    label = "user:led14";
+                    reg = <14>;
+                    default-state = "off";
+                    linux,default-trigger = "none";
+                };
+
+                led@15 {
+                    label = "user:led15";
+                    reg = <15>;
+                    default-state = "off";
+                    linux,default-trigger = "none";
+                };
             };
         };
     };

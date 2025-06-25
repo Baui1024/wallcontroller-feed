@@ -1,0 +1,87 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/home/thomas/wallcontroller-feed/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	//
+Build/Compile	cert-renew/Makefile	/^define Build\/Compile$/;"	m
+Build/Compile	default-network-settings/Makefile	/^define Build\/Compile$/;"	m
+Build/Compile	dt-overlay/Makefile	/^define Build\/Compile$/;"	m
+Build/Compile	gpio-daemon/Makefile	/^define Build\/Compile$/;"	m
+Build/Compile	omega2-ctrl/Makefile	/^define Build\/Compile$/;"	m
+Build/Compile	webserver/Makefile	/^define Build\/Compile$/;"	m
+Build/Prepare	cert-renew/Makefile	/^define Build\/Prepare$/;"	m
+Build/Prepare	dt-overlay/Makefile	/^define Build\/Prepare$/;"	m
+Build/Prepare	gpio-daemon/Makefile	/^define Build\/Prepare$/;"	m
+Build/Prepare	webserver/Makefile	/^define Build\/Prepare$/;"	m
+BuildDtbo	dt-overlay/Makefile	/^define BuildDtbo$/;"	m
+DTC	dt-overlay/Makefile	/^DTC=$(LINUX_DIR)\/scripts\/dtc\/dtc$/;"	m
+KERNEL_BUILD_DIR	dt-overlay/Makefile	/^KERNEL_BUILD_DIR ?= $(BUILD_DIR)\/linux-$(BOARD)$(if $(SUBTARGET),_$(SUBTARGET))$/;"	m
+LINUX_DIR	dt-overlay/Makefile	/^LINUX_DIR ?= $(KERNEL_BUILD_DIR)\/linux-$(LINUX_VERSION)$/;"	m
+PKG_BUILD_DIR	omega2-ctrl/Makefile	/^PKG_BUILD_DIR:=$(BUILD_DIR)\/$(PKG_NAME)$/;"	m
+PKG_LICENSE	gpio-daemon/Makefile	/^PKG_LICENSE:=CC-BY-NC-4.0$/;"	m
+PKG_LICENSE	webserver/Makefile	/^PKG_LICENSE:=CC-BY-NC-4.0$/;"	m
+PKG_MAINTAINER	gpio-daemon/Makefile	/^PKG_MAINTAINER:=Thomas Bauer <t.bauer_1024@gmx.de>$/;"	m
+PKG_MAINTAINER	webserver/Makefile	/^PKG_MAINTAINER:=Thomas Bauer <t.bauer_1024@gmx.de>$/;"	m
+PKG_MIRROR_HASH	gpio-daemon/Makefile	/^PKG_MIRROR_HASH:=skip$/;"	m
+PKG_MIRROR_HASH	omega2-ctrl/Makefile	/^PKG_MIRROR_HASH:=skip$/;"	m
+PKG_MIRROR_HASH	webserver/Makefile	/^PKG_MIRROR_HASH:=skip$/;"	m
+PKG_NAME	cert-renew/Makefile	/^PKG_NAME:=cert-renew$/;"	m
+PKG_NAME	default-network-settings/Makefile	/^PKG_NAME:=default-network-settings$/;"	m
+PKG_NAME	dt-overlay/Makefile	/^PKG_NAME:=dt-overlay$/;"	m
+PKG_NAME	gpio-daemon/Makefile	/^PKG_NAME:=gpio-daemon$/;"	m
+PKG_NAME	omega2-ctrl/Makefile	/^PKG_NAME:=omega2-ctrl-wallcontroller$/;"	m
+PKG_NAME	webserver/Makefile	/^PKG_NAME:=webserver$/;"	m
+PKG_RELEASE	cert-renew/Makefile	/^PKG_RELEASE:=1$/;"	m
+PKG_RELEASE	default-network-settings/Makefile	/^PKG_RELEASE:=1$/;"	m
+PKG_RELEASE	dt-overlay/Makefile	/^PKG_RELEASE:=5$/;"	m
+PKG_RELEASE	gpio-daemon/Makefile	/^PKG_RELEASE:=1$/;"	m
+PKG_RELEASE	omega2-ctrl/Makefile	/^PKG_RELEASE:=1$/;"	m
+PKG_RELEASE	webserver/Makefile	/^PKG_RELEASE:=1$/;"	m
+PKG_SOURCE	omega2-ctrl/Makefile	/^PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz$/;"	m
+PKG_SOURCE_PROTO	gpio-daemon/Makefile	/^PKG_SOURCE_PROTO:=git$/;"	m
+PKG_SOURCE_PROTO	omega2-ctrl/Makefile	/^PKG_SOURCE_PROTO:=git$/;"	m
+PKG_SOURCE_PROTO	webserver/Makefile	/^PKG_SOURCE_PROTO:=git$/;"	m
+PKG_SOURCE_SUBDIR	gpio-daemon/Makefile	/^PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)$/;"	m
+PKG_SOURCE_SUBDIR	omega2-ctrl/Makefile	/^PKG_SOURCE_SUBDIR:=$(PKG_NAME)$/;"	m
+PKG_SOURCE_SUBDIR	webserver/Makefile	/^PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)$/;"	m
+PKG_SOURCE_URL	gpio-daemon/Makefile	/^PKG_SOURCE_URL:=https:\/\/github.com\/Baui1024\/wallcontroller_buttons_api.git$/;"	m
+PKG_SOURCE_URL	omega2-ctrl/Makefile	/^PKG_SOURCE_URL:=https:\/\/github.com\/Baui1024\/omega2-ctrl$/;"	m
+PKG_SOURCE_URL	webserver/Makefile	/^PKG_SOURCE_URL:=https:\/\/github.com\/Baui1024\/wallcontroller_buttons_webserver.git$/;"	m
+PKG_SOURCE_VERSION	gpio-daemon/Makefile	/^PKG_SOURCE_VERSION:=master$/;"	m
+PKG_SOURCE_VERSION	webserver/Makefile	/^PKG_SOURCE_VERSION:=master$/;"	m
+PKG_VERSION	cert-renew/Makefile	/^PKG_VERSION:=1.0.0$/;"	m
+PKG_VERSION	default-network-settings/Makefile	/^PKG_VERSION:=1.0$/;"	m
+PKG_VERSION	dt-overlay/Makefile	/^PKG_VERSION:=1.0$/;"	m
+PKG_VERSION	gpio-daemon/Makefile	/^PKG_VERSION:=1.0.5$/;"	m
+PKG_VERSION	omega2-ctrl/Makefile	/^PKG_VERSION:=0.4.1$/;"	m
+PKG_VERSION	webserver/Makefile	/^PKG_VERSION:=1.0.2$/;"	m
+Package/$(PKG_NAME)	omega2-ctrl/Makefile	/^define Package\/$(PKG_NAME)$/;"	m
+Package/$(PKG_NAME)/description	omega2-ctrl/Makefile	/^define Package\/$(PKG_NAME)\/description$/;"	m
+Package/$(PKG_NAME)/install	omega2-ctrl/Makefile	/^define Package\/$(PKG_NAME)\/install$/;"	m
+Package/cert-renew	cert-renew/Makefile	/^define Package\/cert-renew$/;"	m
+Package/cert-renew/description	cert-renew/Makefile	/^define Package\/cert-renew\/description$/;"	m
+Package/cert-renew/install	cert-renew/Makefile	/^define Package\/cert-renew\/install$/;"	m
+Package/default-network-settings	default-network-settings/Makefile	/^define Package\/default-network-settings$/;"	m
+Package/default-network-settings/description	default-network-settings/Makefile	/^define Package\/default-network-settings\/description$/;"	m
+Package/default-network-settings/install	default-network-settings/Makefile	/^define Package\/default-network-settings\/install$/;"	m
+Package/dt-overlay	dt-overlay/Makefile	/^define Package\/dt-overlay$/;"	m
+Package/dt-overlay-$(1)/description	dt-overlay/Makefile	/^  define Package\/dt-overlay-$(1)\/description$/;"	m
+Package/dt-overlay-$(1)/install	dt-overlay/Makefile	/^  define Package\/dt-overlay-$(1)\/install$/;"	m
+Package/dt-overlay-$(1)/postinst	dt-overlay/Makefile	/^  define Package\/dt-overlay-$(1)\/postinst$/;"	m
+Package/dt-overlay/default	dt-overlay/Makefile	/^define Package\/dt-overlay\/default$/;"	m
+Package/dt-overlay/description	dt-overlay/Makefile	/^define Package\/dt-overlay\/description$/;"	m
+Package/dt-overlay/install	dt-overlay/Makefile	/^define Package\/dt-overlay\/install$/;"	m
+Package/gpio-daemon	gpio-daemon/Makefile	/^define Package\/gpio-daemon$/;"	m
+Package/gpio-daemon/description	gpio-daemon/Makefile	/^define Package\/gpio-daemon\/description$/;"	m
+Package/gpio-daemon/install	gpio-daemon/Makefile	/^define Package\/gpio-daemon\/install$/;"	m
+Package/webserver	webserver/Makefile	/^define Package\/webserver$/;"	m
+Package/webserver/description	webserver/Makefile	/^define Package\/webserver\/description$/;"	m
+Package/webserver/install	webserver/Makefile	/^define Package\/webserver\/install$/;"	m
+onewire	dt-overlay/src/w1-gpio.dts	/^			onewire:onewire {$/;"	l
+pca9635	dt-overlay/src/pca9635.dts	/^            pca9635: pca9635@08 {$/;"	l
