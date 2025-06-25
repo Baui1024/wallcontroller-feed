@@ -8,7 +8,7 @@
         target = <&i2c0>;  // adapt to your bus if needed
 
         __overlay__ {
-            pca9635: pca9635@08 {
+            pca9635: pca9635 {
                 compatible = "nxp,pca9635";
                 reg = <0x08>;
                 #address-cells = <1>;
