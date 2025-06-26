@@ -22,11 +22,12 @@ include $(INCLUDE_DIR)/package.mk
 
 
 define Package/gpio-daemon	
-	KCONFIG:=DEVMEM=y
 	SECTION:=wallcontroller
 	CATEGORY:=Wallcontroller
 	TITLE:=GPIO WebSocket Control Daemon
-	DEPENDS:=+python3 +python3-websockets +python3-gpiod +omega2-ctrl-wallcontroller +kmod-leds-pca963x +kmod-i2c-mt7628
+	DEPENDS:=+python3 +python3-websockets +python3-gpiod +omega2-ctrl-wallcontroller +kmod-leds-pca963x +kmod-i2c-mt7628 @KERNEL_DEVMEM
+	KCONFIG:= \
+		CONFIG_KERNEL_DEVMEM=y
 endef
 
 define Package/gpio-daemon/description
