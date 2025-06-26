@@ -24,7 +24,7 @@ define Package/gpio-daemon
 	SECTION:=wallcontroller
 	CATEGORY:=Wallcontroller
 	TITLE:=GPIO WebSocket Control Daemon
-	DEPENDS:=+python3 +python3-websockets +python3-gpiod +omega2-ctrl-wallcontroller +kmod-leds-pca963x
+	DEPENDS:=+python3 +python3-websockets +python3-gpiod +omega2-ctrl-wallcontroller +kmod-leds-pca963x +kmod-i2c-mt7628
 endef
 
 define Package/gpio-daemon/description
