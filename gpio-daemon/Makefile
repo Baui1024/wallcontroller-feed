@@ -13,15 +13,14 @@ PKG_SOURCE_URL:=https://github.com/Baui1024/wallcontroller_buttons_api.git
 PKG_SOURCE_VERSION:=master
 PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)
 PKG_MIRROR_HASH:=skip
-
+KCONFIG:=CONFIG_DEVMEM=y
 
 PKG_LICENSE:=CC-BY-NC-4.0
 PKG_MAINTAINER:=Thomas Bauer <t.bauer_1024@gmx.de>
 
 include $(INCLUDE_DIR)/package.mk
 
-define Package/gpio-daemon
-	KCONFIG:=CONFIG_DEVMEM=y
+define Package/gpio-daemon	
 	SECTION:=wallcontroller
 	CATEGORY:=Wallcontroller
 	TITLE:=GPIO WebSocket Control Daemon
