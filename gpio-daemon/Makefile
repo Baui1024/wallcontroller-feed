@@ -25,7 +25,13 @@ define Package/gpio-daemon
 	SECTION:=wallcontroller
 	CATEGORY:=Wallcontroller
 	TITLE:=GPIO WebSocket Control Daemon
-	DEPENDS:=+python3 +python3-websockets +python3-gpiod +omega2-ctrl-wallcontroller +kmod-leds-pca963x +kmod-i2c-mt7628 @KERNEL_DEVMEM
+	DEPENDS:=+python3 +python3-websockets +python3-gpiod +omega2-ctrl-wallcontroller +kmod-leds-pca963x +kmod-i2c-mt7628
+endef
+
+# Add kernel config dependencies - these will be enabled when the package is selected
+define KernelPackage/gpio-daemon
+	SUBMENU:=Wallcontroller
+	TITLE:=Kernel dependencies for GPIO Daemon
 	KCONFIG:= \
 		CONFIG_KERNEL_DEVMEM=y
 endef
@@ -53,5 +59,12 @@ define Package/gpio-daemon/install
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/button.py $(1)/usr/bin/gpio-daemon/
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/gpio-daemon.init $(1)/etc/init.d/gpio-daemon
 endef
+
+# Enable kernel options needed by this package
+define Prepare/gpio-daemon
+	echo "CONFIG_KERNEL_DEVMEM=y" >> $(LINUX_DIR)/.config
+endef
+
+Hooks/Prepare/Pre += Prepare/gpio-daemon
 
 $(eval $(call BuildPackage,gpio-daemon))
