@@ -21,6 +21,7 @@ PKG_MAINTAINER:=Thomas Bauer <t.bauer_1024@gmx.de>
 include $(INCLUDE_DIR)/package.mk
 
 define Package/gpio-daemon
+	KCONFIG:=CONFIG_DEVMEM=y
 	SECTION:=wallcontroller
 	CATEGORY:=Wallcontroller
 	TITLE:=GPIO WebSocket Control Daemon
