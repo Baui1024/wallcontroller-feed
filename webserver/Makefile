@@ -5,7 +5,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=webserver
-PKG_VERSION:=1.0.2
+PKG_VERSION:=1.0.3
 PKG_RELEASE:=1
 
 PKG_SOURCE_PROTO:=git
@@ -49,9 +49,12 @@ define Package/webserver/install
 
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/main.py $(1)/usr/bin/webserver/
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/ip_tool.py $(1)/usr/bin/webserver/
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/mt7688gpio.py $(1)/usr/bin/webserver/
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/gpio_ip_monitor.py $(1)/usr/bin/webserver/
 	$(CP) -r $(PKG_BUILD_DIR)/frontend/dist $(1)/usr/bin/webserver/frontend/
 
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/webserver.init $(1)/etc/init.d/webserver
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/gpio-ip-monitor.init $(1)/etc/init.d/gpio-ip-monitor
 endef
 
 $(eval $(call BuildPackage,webserver))
