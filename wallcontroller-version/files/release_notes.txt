@@ -1,0 +1,46 @@
+# Wallcontroller Firmware v1.0.3
+
+## New Features
+- 
+
+## Bug Fixes
+- 
+
+## Known Issues
+- 
+
+# Wallcontroller Firmware v1.0.2
+
+## New Features
+- 
+
+## Bug Fixes
+- 
+
+## Known Issues
+- 
+
+-e # Wallcontroller Firmware v1.0.1
+
+## New Features
+- 
+
+## Bug Fixes
+- 
+
+## Known Issues
+- 
+
+# Wallcontroller Firmware v1.0.0
+
+## New Features
+- Initial stable release
+- Integrated webserver component
+- GPIO daemon for hardware control
+- Automated SSL certificate renewal
+
+## Bug Fixes
+- None (initial release)
+
+## Known Issues
+- None
