@@ -1,9 +1,9 @@
 {
-  "firmware_version": "1.0.9",
+  "firmware_version": "1.0.10",
   "build_date": "2025-07-28",
   "components": {
     "webserver": "1.0.6",
-    "gpio-daemon": "1.0.13",
+    "gpio-daemon": "1.0.14",
     "cert-renew": "1.0.0"
   }
 }
