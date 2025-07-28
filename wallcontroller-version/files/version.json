@@ -3,7 +3,7 @@
   "build_date": "2025-07-28",
   "components": {
     "webserver": "1.0.6",
-    "gpio-daemon": "1.0.14",
+    "gpio-daemon": "1.0.15",
     "cert-renew": "1.0.0"
   }
 }
