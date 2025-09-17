@@ -25,6 +25,11 @@ for section in $(uci show wireless | grep "=wifi-device" | cut -d. -f2 | cut -d=
     uci set wireless.$section.disabled='1'
 done
 
+#Remove existing WAN interface if exists
+if uci show network.wan >/dev/null 2>&1; then
+    uci delete network.wan
+fi
+
 # Set up LAN interface as dhcp
 uci set network.lan=interface
 uci set network.lan.device='eth0'
