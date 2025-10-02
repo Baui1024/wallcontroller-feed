@@ -1,5 +1,22 @@
 #!/bin/sh
 
+# Overwrite network configuration with default settings
+cat > /etc/config/network << 'EOF'
+config interface 'loopback'
+	option device 'lo'
+	option proto 'static'
+	option ipaddr '127.0.0.1'
+	option netmask '255.0.0.0'
+
+config interface 'lan'
+	option device 'eth0'
+	option proto 'dhcp'
+	option ipaddr '192.168.100.100'
+	option netmask '255.255.255.0'
+	option ip6assign '60'
+
+EOF
+
 # Set interface to extract MAC address
 IFACE="eth0"
 PREFIX="wallcontroller"
@@ -24,17 +41,6 @@ uci set system.@system[0].zonename='Europe/Berlin'
 for section in $(uci show wireless | grep "=wifi-device" | cut -d. -f2 | cut -d= -f1); do
     uci set wireless.$section.disabled='1'
 done
-
-#Remove existing WAN interface if exists
-if uci show network.wan >/dev/null 2>&1; then
-    uci delete network.wan
-fi
-
-# Set up LAN interface as dhcp
-uci set network.lan=interface
-uci set network.lan.device='eth0'
-uci set network.lan.proto='dhcp'
-
 
 # Commit changes
 uci commit system
