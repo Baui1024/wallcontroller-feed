@@ -8,13 +8,25 @@ config interface 'loopback'
 	option ipaddr '127.0.0.1'
 	option netmask '255.0.0.0'
 
+config globals 'globals'
+	option ula_prefix 'fd17:4a2a:e040::/48'
+
+config device
+	option name 'br-lan'
+	option type 'bridge'
+	list ports 'eth0'
+
 config interface 'lan'
 	option device 'eth0'
 	option proto 'dhcp'
-	option ipaddr '192.168.100.100'
+	option ipaddr '192.168.1.100'
 	option netmask '255.255.255.0'
 	option ip6assign '60'
 
+config switch
+	option name 'switch0'
+	option reset '1'
+	option enable_vlan '0'
 EOF
 
 # Set interface to extract MAC address
