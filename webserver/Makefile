@@ -58,7 +58,7 @@ define Package/webserver/install
 
 	# Install nginx site configuration from repository root
 	$(INSTALL_DIR) $(1)/etc/nginx/conf.d
-	$(INSTALL_DATA) $(TOPDIR)/webserver.locations $(1)/etc/nginx/conf.d/webserver.locations
+	$(INSTALL_DATA) $(PKG_BUILD_DIR)/webserver.locations $(1)/etc/nginx/conf.d/webserver.locations
 endef
 
 $(eval $(call BuildPackage,webserver))
