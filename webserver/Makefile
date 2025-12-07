@@ -5,7 +5,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=webserver
-PKG_VERSION:=1.0.10
+PKG_VERSION:=1.0.15
 PKG_RELEASE:=1
 
 PKG_SOURCE_PROTO:=git
@@ -55,6 +55,10 @@ define Package/webserver/install
 
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/webserver.init $(1)/etc/init.d/webserver
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/gpio-ip-monitor.init $(1)/etc/init.d/gpio-ip-monitor
+
+	# Install nginx site configuration from repository root
+	$(INSTALL_DIR) $(1)/etc/nginx/conf.d
+	$(INSTALL_DATA) $(TOPDIR)/webserver.locations $(1)/etc/nginx/conf.d/webserver.locations
 endef
 
 $(eval $(call BuildPackage,webserver))
