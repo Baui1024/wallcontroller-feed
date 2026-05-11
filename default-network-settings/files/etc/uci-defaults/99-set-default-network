@@ -31,7 +31,7 @@ EOF
 
 # Set interface to extract MAC address
 IFACE="eth0"
-PREFIX="wallcontroller"
+PREFIX="NC4"
 
 # Get MAC address
 mac=$(ifconfig "$IFACE" | grep -o -E '([[:xdigit:]]{2}:){5}[[:xdigit:]]{2}' | head -n1)
