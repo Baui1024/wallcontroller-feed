@@ -1,0 +1,35 @@
+#!/bin/sh
+# IP reset button (GPIO11): hold 5-10s to switch lan to static 192.168.100.100
+
+[ "$ACTION" = "released" ] || exit 0
+[ "$SEEN" -ge 5 ] && [ "$SEEN" -lt 10 ] || exit 0
+
+logger -t ip-reset "button held ${SEEN}s, switching lan to static 192.168.100.100"
+
+uci set network.lan.proto='static'
+uci set network.lan.ipaddr='192.168.100.100'
+uci set network.lan.netmask='255.255.255.0'
+uci -q delete network.lan.gateway
+uci commit network
+
+(
+	# Stop gpio-daemon so its breathing animation doesn't fight the blinking
+	/etc/init.d/gpio-daemon stop
+
+	# Blink all LEDs ~3 times as confirmation
+	for led in /sys/class/leds/pca963x:led*; do
+		echo timer > "$led/trigger"
+		echo 170 > "$led/delay_on"
+		echo 170 > "$led/delay_off"
+	done
+	sleep 1
+	for led in /sys/class/leds/pca963x:led*; do
+		echo none > "$led/trigger"
+		echo 0 > "$led/brightness"
+	done
+
+	/etc/init.d/network restart
+	/etc/init.d/gpio-daemon start
+)</dev/null >/dev/null 2>&1 &
+
+exit 0

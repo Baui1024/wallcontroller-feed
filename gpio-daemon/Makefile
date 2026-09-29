@@ -5,7 +5,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=gpio-daemon
-PKG_VERSION:=1.0.19
+PKG_VERSION:=1.0.20
 PKG_RELEASE:=1
 
 PKG_SOURCE_PROTO:=git
@@ -25,7 +25,7 @@ define Package/gpio-daemon
 	SECTION:=wallcontroller
 	CATEGORY:=Wallcontroller
 	TITLE:=GPIO WebSocket Control Daemon
-	DEPENDS:=+python3 +python3-websockets +python3-gpiod +omega2-ctrl-wallcontroller +kmod-leds-pca963x +kmod-i2c-mt7628 @KERNEL_DEVMEM
+	DEPENDS:=+python3 +python3-websockets +omega2-ctrl-wallcontroller +kmod-leds-pca963x +kmod-i2c-mt7628 @KERNEL_DEVMEM
 	KCONFIG:= \
 		CONFIG_KERNEL_DEVMEM=y
 endef

@@ -25,7 +25,7 @@ config interface 'lan'
 
 config switch
 	option name 'switch0'
-	option reset '1'
+	option reset '0'
 	option enable_vlan '0'
 EOF
 
@@ -49,19 +49,15 @@ fi
 uci set system.@system[0].timezone='CET-1CEST,M3.5.0,M10.5.0/3'
 uci set system.@system[0].zonename='Europe/Berlin'
 
-# Disable all radios
-for section in $(uci show wireless | grep "=wifi-device" | cut -d. -f2 | cut -d= -f1); do
-    uci set wireless.$section.disabled='1'
-done
+# Packet steering is pointless on the single-core MT7688
+/etc/init.d/packet_steering disable
 
 # Commit changes
 uci commit system
-uci commit wireless
 uci commit network
 
 # Reload affected services
 /etc/init.d/system reload
-wifi reload
 /etc/init.d/network reload
 
 exit 0
