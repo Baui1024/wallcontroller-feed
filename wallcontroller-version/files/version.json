@@ -2,7 +2,7 @@
   "firmware_version": "1.0.18",
   "build_date": "2026-02-17",
   "components": {
-    "webserver": "1.0.23",
+    "webserver": "1.0.24",
     "gpio-daemon": "1.0.23",
     "cert-renew": "1.0.0"
   }
