@@ -5,7 +5,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=gpio-daemon
-PKG_VERSION:=1.0.21
+PKG_VERSION:=1.0.22
 PKG_RELEASE:=1
 
 PKG_SOURCE_PROTO:=git
@@ -25,7 +25,7 @@ define Package/gpio-daemon
 	SECTION:=wallcontroller
 	CATEGORY:=Wallcontroller
 	TITLE:=GPIO WebSocket Control Daemon
-	DEPENDS:=+python3 +python3-websockets +omega2-ctrl-wallcontroller +kmod-leds-pca963x +kmod-i2c-mt7628 @KERNEL_DEVMEM
+	DEPENDS:=+python3 +python3-websockets +omega2-ctrl-wallcontroller +kmod-leds-pca963x +kmod-i2c-mt7628 +nginx-ssl +cert-renew @KERNEL_DEVMEM
 	KCONFIG:= \
 		CONFIG_KERNEL_DEVMEM=y
 endef
@@ -52,6 +52,10 @@ define Package/gpio-daemon/install
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/led.py $(1)/usr/bin/gpio-daemon/
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/button.py $(1)/usr/bin/gpio-daemon/
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/gpio-daemon.init $(1)/etc/init.d/gpio-daemon
+
+	# nginx terminates TLS for wss://<device>:8765 and proxies to the daemon
+	$(INSTALL_DIR) $(1)/etc/nginx/conf.d
+	$(INSTALL_DATA) ./files/gpio-daemon-ws.conf $(1)/etc/nginx/conf.d/gpio-daemon-ws.conf
 endef
 
 $(eval $(call BuildPackage,gpio-daemon))

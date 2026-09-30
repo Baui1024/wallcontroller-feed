@@ -1,10 +1,9 @@
 #!/bin/sh /etc/rc.common
 
-START=95
-USE_PROCD=1
+# Runs synchronously right before nginx (START=80), so the certificate
+# exists when nginx starts
+START=79
 
-start_service() {
-	procd_open_instance
-	procd_set_param command /usr/bin/cert-renew.sh
-	procd_close_instance
+start() {
+	/usr/bin/cert-renew.sh
 }

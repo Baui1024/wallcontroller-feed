@@ -1,0 +1,10 @@
+#!/bin/sh
+# Serve the web UI with the shared wallcontroller certificate instead of
+# nginx-util's own self-signed one (see /usr/bin/cert-renew.sh)
+
+uci -q delete nginx._lan.uci_manage_ssl
+uci set nginx._lan.ssl_certificate='/etc/wallcontroller/tls/server.crt'
+uci set nginx._lan.ssl_certificate_key='/etc/wallcontroller/tls/server.key'
+uci commit nginx
+
+exit 0

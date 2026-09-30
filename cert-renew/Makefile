@@ -1,16 +1,16 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=cert-renew
-PKG_VERSION:=1.0.0
-PKG_RELEASE:=2
+PKG_VERSION:=1.1.0
+PKG_RELEASE:=1
 
 include $(INCLUDE_DIR)/package.mk
 
 define Package/cert-renew
 	SECTION:=wallcontroller
 	CATEGORY:=Wallcontroller
-	TITLE:=Self-signed SSL Certificate Renewal
-	DEPENDS:= +openssl-util 
+	TITLE:=Wallcontroller TLS certificate (self-signed, shared by nginx)
+	DEPENDS:=+openssl-util +nginx-ssl
 endef
 
 define Package/cert-renew/description
@@ -36,6 +36,13 @@ define Package/cert-renew/install
 
 	$(INSTALL_DIR) $(1)/etc/init.d
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/files/cert-renew.init $(1)/etc/init.d/cert-renew
+
+	$(INSTALL_DIR) $(1)/etc/uci-defaults
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/files/etc/uci-defaults/90-nginx-wallcontroller-tls $(1)/etc/uci-defaults/
+
+	# Keep the certificate (self-signed or uploaded) across sysupgrades
+	$(INSTALL_DIR) $(1)/lib/upgrade/keep.d
+	$(INSTALL_DATA) $(PKG_BUILD_DIR)/files/keep.d $(1)/lib/upgrade/keep.d/cert-renew
 endef
 
 $(eval $(call BuildPackage,cert-renew))
