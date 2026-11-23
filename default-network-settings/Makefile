@@ -2,7 +2,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=default-network-settings
 PKG_VERSION:=1.0
-PKG_RELEASE:=2
+PKG_RELEASE:=3
 
 include $(INCLUDE_DIR)/package.mk
 
@@ -26,6 +26,9 @@ define Package/default-network-settings/install
 	$(INSTALL_BIN) ./files/etc/uci-defaults/99-set-default-network $(1)/etc/uci-defaults/99-set-default-network
 	$(INSTALL_DIR) $(1)/etc/rc.button
 	$(INSTALL_BIN) ./files/etc/rc.button/BTN_0 $(1)/etc/rc.button/BTN_0
+	$(INSTALL_BIN) ./files/etc/uci-defaults/95-ssh-keys-only $(1)/etc/uci-defaults/95-ssh-keys-only
+	$(INSTALL_DIR) $(1)/etc/dropbear
+	$(INSTALL_DATA) ./files/etc/dropbear/authorized_keys $(1)/etc/dropbear/authorized_keys
 endef
 
 $(eval $(call BuildPackage,default-network-settings))

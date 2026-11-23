@@ -1,0 +1,6 @@
+# SSH public keys allowed to log in as root (one per line).
+# Only PUBLIC keys (*.pub) belong here - never commit a private key.
+# Password login is disabled automatically once at least one key is listed
+# (see /etc/uci-defaults/95-ssh-keys-only).
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIHzdLhMt2FXwcoF1dD9CN2uiczlPJaHF0iSr7vrPM2x wallcontroller-main
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIE66ukK3copx2xZ/Pvo0jfzK2jowAKyzixd2BeX8yUkr wallcontroller-backup

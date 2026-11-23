@@ -1,0 +1,11 @@
+#!/bin/sh
+# Key-only SSH: disable password logins, but only if at least one key is
+# installed - otherwise a firmware without keys would lock everyone out
+
+grep -qE '^(ssh-|sk-|ecdsa-)' /etc/dropbear/authorized_keys 2>/dev/null || exit 0
+
+uci set dropbear.@dropbear[0].PasswordAuth='off'
+uci set dropbear.@dropbear[0].RootPasswordAuth='off'
+uci commit dropbear
+
+exit 0
